@@ -1,4 +1,6 @@
 import styled, { keyframes } from 'styled-components';
+import colors from '../../styles/colors';
+import { fontSizes, fontColors } from '../../styles/types';
 
 const cubicBezier = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
 
@@ -31,40 +33,40 @@ const bounceIn = keyframes`
 
 const tileTypes = {
   base: {
-    backgroundColor: '#009688',
+    backgroundColor: colors.main,
     shadowColor: '#00796b',
-    color: 'white',
+    color: fontColors.alt,
     fontSize: '64px',
   },
   regular: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
-    color: '#333333',
-    fontSize: '64px',
+    color: fontColors.main,
+    fontSize: fontSizes.big,
   },
   copper: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
-    color: '#e64a19',
-    fontSize: '36px',
+    color: fontColors.main,
+    fontSize: fontSizes.medium,
   },
   brass: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
-    color: '#ffa000',
-    fontSize: '36px',
+    color: fontColors.main,
+    fontSize: fontSizes.medium,
   },
   gold: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
     color: '#fbc02d',
-    fontSize: '36px',
+    fontSize: fontSizes.medium,
   },
   pureGold: {
     backgroundColor: '#fbc02d',
     shadowColor: '#f57f17',
-    color: 'white',
-    fontSize: '24px',
+    color: fontColors.alt,
+    fontSize: fontSizes.small,
   },
 };
 
@@ -97,10 +99,8 @@ const StyledTile = styled.div`
   height: 140px;
   background-color: ${props => getTileType(props.value).backgroundColor};
   box-shadow: 0 10px 0 ${props => getTileType(props.value).shadowColor};
-  color: ${props => getTileType(props.value).color};
-  font-family: 'Days One';
-  font-weight: 400;
-  font-size: ${props => getTileType(props.value).fontSize};
+  ${props => getTileType(props.value).color};
+  ${props => getTileType(props.value).fontSize};
 `;
 
 export default StyledTile;

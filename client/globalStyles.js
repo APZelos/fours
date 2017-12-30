@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components';
 import DaysOne from './fonts/DaysOne-Regular.ttf';
+import * as types from './styles/types';
 
 injectGlobal`
   @font-face {
@@ -12,6 +13,8 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Days One';
+    ${types.fontFamily};
+    ${types.fontSizes.medium};
+    ${types.fontColors.main};
   }
 `;
