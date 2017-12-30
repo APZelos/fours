@@ -4,7 +4,10 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs/react';
 import '../client/globalStyles';
 // Components
+import Grid from '../client/components/Grid';
 import Tile from '../client/components/Tile';
+
+storiesOf('Gird', module).add('Grid', () => <Grid size={16} />);
 
 // Tiles
 const tilesStories = storiesOf('Tiles', module);

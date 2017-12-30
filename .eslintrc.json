@@ -2,6 +2,9 @@
   "root": true,
   "parser": "babel-eslint",
   "extends": "airbnb",
+  "rules": {
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+  },
   "plugins": ["react", "jsx-a11y", "import"],
   "env": {
     "browser": true,
