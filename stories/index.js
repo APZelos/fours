@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs/react';
+import '../client/globalStyles';
 // Components
 import Tile from '../client/components/Tile';
 
@@ -37,17 +38,17 @@ tilesStories
     };
     return <Tile value={236} position={object('position', position)} />;
   })
-  .add('Gold (472)', () => {
+  .add('Gold (472 - 944)', () => {
     const position = {
       x: 10,
       y: 10,
     };
     return <Tile value={472} position={object('position', position)} />;
   })
-  .add('Pure Gold (> 472)', () => {
+  .add('Pure Gold (> 944)', () => {
     const position = {
       x: 10,
       y: 10,
     };
-    return <Tile value={944} position={object('position', position)} />;
+    return <Tile value={1888} position={object('position', position)} />;
   });

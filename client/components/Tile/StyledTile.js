@@ -64,7 +64,7 @@ const tileTypes = {
     backgroundColor: '#fbc02d',
     shadowColor: '#f57f17',
     color: 'white',
-    fontSize: '36px',
+    fontSize: '24px',
   },
 };
 
@@ -77,9 +77,9 @@ function getTileType(value) {
   if (value === 128) return tileTypes.copper;
   // Brass (236)
   if (value === 236) return tileTypes.brass;
-  // Gold (472)
-  if (value === 472) return tileTypes.gold;
-  // Pure gold (> 472)
+  // Gold (472 - 944)
+  if (value <= 944) return tileTypes.gold;
+  // Pure gold (> 944)
   return tileTypes.pureGold;
 }
 
@@ -98,6 +98,8 @@ const StyledTile = styled.div`
   background-color: ${props => getTileType(props.value).backgroundColor};
   box-shadow: 0 10px 0 ${props => getTileType(props.value).shadowColor};
   color: ${props => getTileType(props.value).color};
+  font-family: 'Days One';
+  font-weight: 400;
   font-size: ${props => getTileType(props.value).fontSize};
 `;
 
