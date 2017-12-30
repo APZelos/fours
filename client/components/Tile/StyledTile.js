@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import colors from '../../styles/colors';
 import { fontSizes, fontColors } from '../../styles/types';
 
@@ -36,7 +36,7 @@ const tileTypes = {
     backgroundColor: colors.main,
     shadowColor: '#00796b',
     color: fontColors.alt,
-    fontSize: '64px',
+    fontSize: fontSizes.big,
   },
   regular: {
     backgroundColor: '#fffaf7',
@@ -47,19 +47,25 @@ const tileTypes = {
   copper: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
-    color: fontColors.main,
+    color: css`
+      color: #e64a19;
+    `,
     fontSize: fontSizes.medium,
   },
   brass: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
-    color: fontColors.main,
+    color: css`
+      color: #ffa000;
+    `,
     fontSize: fontSizes.medium,
   },
   gold: {
     backgroundColor: '#fffaf7',
     shadowColor: '#fbc02d',
-    color: '#fbc02d',
+    color: css`
+      color: #fbc02d;
+    `,
     fontSize: fontSizes.medium,
   },
   pureGold: {
