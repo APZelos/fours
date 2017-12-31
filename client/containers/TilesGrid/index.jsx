@@ -95,7 +95,7 @@ export default class TilesGrid extends React.Component {
       if (nextOnQueue) {
         this.resolveNewState(nextOnQueue);
       }
-    }, 500);
+    }, 200);
   }
 
   render() {
