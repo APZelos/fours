@@ -18,7 +18,7 @@ export default class Gird extends React.Component {
     const items = [];
 
     for (let i = 0; i < this.props.size; i++) {
-      items.push(<StyledGridItem />);
+      items.push(<StyledGridItem key={i} />);
     }
 
     return items;

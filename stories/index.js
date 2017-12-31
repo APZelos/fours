@@ -1,13 +1,64 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, object } from '@storybook/addon-knobs/react';
+import { withKnobs, object, array } from '@storybook/addon-knobs/react';
+import uuidv4 from 'uuid/v4';
 import '../client/globalStyles';
 // Components
 import Grid from '../client/components/Grid';
 import Tile from '../client/components/Tile';
+// Containers
+import TilesGird from '../client/containers/TilesGrid';
 
-storiesOf('Gird', module).add('Grid', () => <Grid size={16} />);
+storiesOf('Grid', module)
+  .add('Grid', () => <Grid size={16} />)
+  .add('Tiles Grid', () => {
+    const tiles = [
+      {
+        id: uuidv4(),
+        x: 0,
+        y: 0,
+        value: 2,
+      },
+      {
+        id: uuidv4(),
+        x: 1,
+        y: 0,
+        value: 8,
+      },
+      {
+        id: uuidv4(),
+        x: 2,
+        y: 0,
+        value: 236,
+      },
+      {
+        id: uuidv4(),
+        x: 3,
+        y: 0,
+        value: 472,
+      },
+      {
+        id: uuidv4(),
+        x: 0,
+        y: 1,
+        value: 4,
+      },
+      {
+        id: uuidv4(),
+        x: 2,
+        y: 1,
+        value: 128,
+      },
+      {
+        id: uuidv4(),
+        x: 0,
+        y: 2,
+        value: 1888,
+      },
+    ];
+    return <TilesGird tiles={tiles} />;
+  });
 
 // Tiles
 const tilesStories = storiesOf('Tiles', module);
