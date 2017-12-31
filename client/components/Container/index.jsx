@@ -8,8 +8,8 @@ const Container = styled.div`
   grid-row-gap: 10px;
   background-color: ${colors.mainLighter};
   border-radius: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
+  max-width: 475px;
 `;
 
 export default Container;

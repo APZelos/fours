@@ -24484,7 +24484,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Container = _styledComponents2.default.div.withConfig({
   displayName: "Container"
-})(["display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(10px,auto);grid-row-gap:10px;background-color:", ";border-radius:10px;padding-left:15px;padding-right:15px;"], _colors2.default.mainLighter);
+})(["display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(10px,auto);grid-row-gap:10px;background-color:", ";border-radius:10px;padding:15px;max-width:475px;"], _colors2.default.mainLighter);
 
 exports.default = Container;
 },{"styled-components":23,"../../styles/colors":7}],84:[function(require,module,exports) {
