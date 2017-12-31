@@ -7,6 +7,7 @@ import '../client/globalStyles';
 // Components
 import Grid from '../client/components/Grid';
 import Tile from '../client/components/Tile';
+import Container from '../client/components/Container';
 // Containers
 import TilesGird from '../client/containers/TilesGrid';
 
