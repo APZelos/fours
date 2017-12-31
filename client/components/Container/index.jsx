@@ -6,7 +6,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: minmax(10px, auto);
   grid-row-gap: 10px;
-  background-color: ${colors.mainLight};
+  background-color: ${colors.mainLighter};
   border-radius: 10px;
   padding-left: 15px;
   padding-right: 15px;
