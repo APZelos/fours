@@ -68,7 +68,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({42:[function(require,module,exports) {
+})({58:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -160,7 +160,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],65:[function(require,module,exports) {
+},{}],87:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -178,7 +178,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],66:[function(require,module,exports) {
+},{}],85:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -215,7 +215,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],15:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 /** @license React v16.2.0
  * react.production.min.js
  *
@@ -238,7 +238,7 @@ var U={Children:{map:function(a,b,e){if(null==a)return a;var c=[];T(a,c,null,b,e
 d=a.key,g=a.ref,k=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,k=G.current);void 0!==b.key&&(d=""+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(h in b)H.call(b,h)&&!I.hasOwnProperty(h)&&(c[h]=void 0===b[h]&&void 0!==f?f[h]:b[h])}var h=arguments.length-2;if(1===h)c.children=e;else if(1<h){f=Array(h);for(var l=0;l<h;l++)f[l]=arguments[l+2];c.children=f}return{$$typeof:r,type:a.type,key:d,ref:g,props:c,_owner:k}},createFactory:function(a){var b=J.bind(null,a);b.type=a;return b},
 isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:G,assign:m}},V=Object.freeze({default:U}),W=V&&U||V;module.exports=W["default"]?W["default"]:W;
 
-},{"object-assign":42,"fbjs/lib/emptyObject":65,"fbjs/lib/emptyFunction":66}],67:[function(require,module,exports) {
+},{"object-assign":58,"fbjs/lib/emptyObject":87,"fbjs/lib/emptyFunction":85}],90:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -292,7 +292,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],74:[function(require,module,exports) {
+},{}],91:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -355,7 +355,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":66}],52:[function(require,module,exports) {
+},{"./emptyFunction":85}],67:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -369,7 +369,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],51:[function(require,module,exports) {
+},{}],66:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -429,7 +429,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"fbjs/lib/invariant":67,"fbjs/lib/warning":74,"./lib/ReactPropTypesSecret":52}],16:[function(require,module,exports) {
+},{"fbjs/lib/invariant":90,"fbjs/lib/warning":91,"./lib/ReactPropTypesSecret":67}],26:[function(require,module,exports) {
 /** @license React v16.2.0
  * react.development.js
  *
@@ -1781,7 +1781,7 @@ if ("development" !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":42,"fbjs/lib/emptyObject":65,"fbjs/lib/invariant":67,"fbjs/lib/warning":74,"fbjs/lib/emptyFunction":66,"prop-types/checkPropTypes":51}],13:[function(require,module,exports) {
+},{"object-assign":58,"fbjs/lib/emptyObject":87,"fbjs/lib/invariant":90,"fbjs/lib/warning":91,"fbjs/lib/emptyFunction":85,"prop-types/checkPropTypes":66}],16:[function(require,module,exports) {
 'use strict';
 
 if ("development" === 'production') {
@@ -1789,7 +1789,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.production.min.js":15,"./cjs/react.development.js":16}],48:[function(require,module,exports) {
+},{"./cjs/react.production.min.js":25,"./cjs/react.development.js":26}],63:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2306,7 +2306,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   return ReactPropTypes;
 };
-},{"fbjs/lib/emptyFunction":66,"fbjs/lib/invariant":67,"fbjs/lib/warning":74,"object-assign":42,"./lib/ReactPropTypesSecret":52,"./checkPropTypes":51}],49:[function(require,module,exports) {
+},{"fbjs/lib/emptyFunction":85,"fbjs/lib/invariant":90,"fbjs/lib/warning":91,"object-assign":58,"./lib/ReactPropTypesSecret":67,"./checkPropTypes":66}],64:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2366,7 +2366,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"fbjs/lib/emptyFunction":66,"fbjs/lib/invariant":67,"./lib/ReactPropTypesSecret":52}],45:[function(require,module,exports) {
+},{"fbjs/lib/emptyFunction":85,"fbjs/lib/invariant":90,"./lib/ReactPropTypesSecret":67}],57:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2390,7 +2390,7 @@ if ("development" !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"./factoryWithTypeCheckers":48,"./factoryWithThrowingShims":49}],31:[function(require,module,exports) {
+},{"./factoryWithTypeCheckers":63,"./factoryWithThrowingShims":64}],40:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2416,7 +2416,7 @@ var storeShape = exports.storeShape = _propTypes2.default.shape({
   dispatch: _propTypes2.default.func.isRequired,
   getState: _propTypes2.default.func.isRequired
 });
-},{"prop-types":45}],32:[function(require,module,exports) {
+},{"prop-types":57}],41:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2444,7 +2444,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],19:[function(require,module,exports) {
+},{}],27:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2548,7 +2548,7 @@ function createProvider() {
 }
 
 exports.default = createProvider();
-},{"react":13,"prop-types":45,"../utils/PropTypes":31,"../utils/warning":32}],47:[function(require,module,exports) {
+},{"react":16,"prop-types":57,"../utils/PropTypes":40,"../utils/warning":41}],59:[function(require,module,exports) {
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -2615,7 +2615,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],55:[function(require,module,exports) {
+},{}],73:[function(require,module,exports) {
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -2664,7 +2664,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 };
 
 module.exports = invariant;
-},{}],33:[function(require,module,exports) {
+},{}],42:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2766,7 +2766,7 @@ var Subscription = function () {
 }();
 
 exports.default = Subscription;
-},{}],20:[function(require,module,exports) {
+},{}],28:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3101,7 +3101,7 @@ selectorFactory) {
     return (0, _hoistNonReactStatics2.default)(Connect, WrappedComponent);
   };
 }
-},{"hoist-non-react-statics":47,"invariant":55,"react":13,"../utils/Subscription":33,"../utils/PropTypes":31}],34:[function(require,module,exports) {
+},{"hoist-non-react-statics":59,"invariant":73,"react":16,"../utils/Subscription":42,"../utils/PropTypes":40}],43:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3141,7 +3141,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],77:[function(require,module,exports) {
+},{}],95:[function(require,module,exports) {
 var global = (1,eval)("this");
 "use strict";
 
@@ -3155,7 +3155,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var freeGlobal = (typeof global === "undefined" ? "undefined" : _typeof(global)) == 'object' && global && global.Object === Object && global;
 
 exports.default = freeGlobal;
-},{}],64:[function(require,module,exports) {
+},{}],82:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3177,7 +3177,7 @@ var freeSelf = (typeof self === "undefined" ? "undefined" : _typeof(self)) == 'o
 var root = _freeGlobal2.default || freeSelf || Function('return this')();
 
 exports.default = root;
-},{"./_freeGlobal.js":77}],60:[function(require,module,exports) {
+},{"./_freeGlobal.js":95}],78:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3194,7 +3194,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _Symbol = _root2.default.Symbol;
 
 exports.default = _Symbol;
-},{"./_root.js":64}],61:[function(require,module,exports) {
+},{"./_root.js":82}],79:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3251,7 +3251,7 @@ function getRawTag(value) {
 }
 
 exports.default = getRawTag;
-},{"./_Symbol.js":60}],62:[function(require,module,exports) {
+},{"./_Symbol.js":78}],80:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3279,7 +3279,7 @@ function objectToString(value) {
 }
 
 exports.default = objectToString;
-},{}],57:[function(require,module,exports) {
+},{}],75:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3322,7 +3322,7 @@ function baseGetTag(value) {
 }
 
 exports.default = baseGetTag;
-},{"./_Symbol.js":60,"./_getRawTag.js":61,"./_objectToString.js":62}],63:[function(require,module,exports) {
+},{"./_Symbol.js":78,"./_getRawTag.js":79,"./_objectToString.js":80}],81:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3343,7 +3343,7 @@ function overArg(func, transform) {
 }
 
 exports.default = overArg;
-},{}],58:[function(require,module,exports) {
+},{}],76:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3360,7 +3360,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var getPrototype = (0, _overArg2.default)(Object.getPrototypeOf, Object);
 
 exports.default = getPrototype;
-},{"./_overArg.js":63}],59:[function(require,module,exports) {
+},{"./_overArg.js":81}],77:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3398,7 +3398,7 @@ function isObjectLike(value) {
 }
 
 exports.default = isObjectLike;
-},{}],56:[function(require,module,exports) {
+},{}],74:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3476,7 +3476,7 @@ function isPlainObject(value) {
 }
 
 exports.default = isPlainObject;
-},{"./_baseGetTag.js":57,"./_getPrototype.js":58,"./isObjectLike.js":59}],54:[function(require,module,exports) {
+},{"./_baseGetTag.js":75,"./_getPrototype.js":76,"./isObjectLike.js":77}],69:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3500,7 +3500,7 @@ function symbolObservablePonyfill(root) {
 
   return result;
 };
-},{}],50:[function(require,module,exports) {
+},{}],65:[function(require,module,exports) {
 var global = (1,eval)("this");
 "use strict";
 
@@ -3531,7 +3531,7 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2.default)(root);
 exports.default = result;
-},{"./ponyfill.js":54}],25:[function(require,module,exports) {
+},{"./ponyfill.js":69}],35:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3798,7 +3798,7 @@ var ActionTypes = exports.ActionTypes = {
     replaceReducer: replaceReducer
   }, _ref2[_symbolObservable2.default] = observable, _ref2;
 }
-},{"lodash-es/isPlainObject":56,"symbol-observable":50}],30:[function(require,module,exports) {
+},{"lodash-es/isPlainObject":74,"symbol-observable":65}],48:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3826,7 +3826,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],26:[function(require,module,exports) {
+},{}],36:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3972,7 +3972,7 @@ function combineReducers(reducers) {
     return hasChanged ? nextState : state;
   };
 }
-},{"./createStore":25,"lodash-es/isPlainObject":56,"./utils/warning":30}],27:[function(require,module,exports) {
+},{"./createStore":35,"lodash-es/isPlainObject":74,"./utils/warning":48}],37:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4029,7 +4029,7 @@ function bindActionCreators(actionCreators, dispatch) {
   }
   return boundActionCreators;
 }
-},{}],29:[function(require,module,exports) {
+},{}],39:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4068,7 +4068,7 @@ function compose() {
     };
   });
 }
-},{}],28:[function(require,module,exports) {
+},{}],38:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4136,7 +4136,7 @@ function applyMiddleware() {
     };
   };
 }
-},{"./compose":29}],22:[function(require,module,exports) {
+},{"./compose":39}],30:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4185,7 +4185,7 @@ exports.combineReducers = _combineReducers2.default;
 exports.bindActionCreators = _bindActionCreators2.default;
 exports.applyMiddleware = _applyMiddleware2.default;
 exports.compose = _compose2.default;
-},{"./createStore":25,"./combineReducers":26,"./bindActionCreators":27,"./applyMiddleware":28,"./compose":29,"./utils/warning":30}],40:[function(require,module,exports) {
+},{"./createStore":35,"./combineReducers":36,"./bindActionCreators":37,"./applyMiddleware":38,"./compose":39,"./utils/warning":48}],52:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4208,7 +4208,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning2.default)(methodName + '() in ' + displayName + ' must return a plain object. Instead received ' + value + '.');
   }
 }
-},{"lodash-es/isPlainObject":56,"./warning":32}],39:[function(require,module,exports) {
+},{"lodash-es/isPlainObject":74,"./warning":41}],51:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4289,7 +4289,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
     return proxy;
   };
 }
-},{"../utils/verifyPlainObject":40}],35:[function(require,module,exports) {
+},{"../utils/verifyPlainObject":52}],44:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4323,7 +4323,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 }
 
 exports.default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
-},{"redux":22,"./wrapMapToProps":39}],36:[function(require,module,exports) {
+},{"redux":30,"./wrapMapToProps":51}],45:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4345,7 +4345,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 }
 
 exports.default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
-},{"./wrapMapToProps":39}],37:[function(require,module,exports) {
+},{"./wrapMapToProps":51}],46:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4413,7 +4413,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 }
 
 exports.default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
-},{"../utils/verifyPlainObject":40}],41:[function(require,module,exports) {
+},{"../utils/verifyPlainObject":52}],53:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4442,7 +4442,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
   verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
   verify(mergeProps, 'mergeProps', displayName);
 }
-},{"../utils/warning":32}],38:[function(require,module,exports) {
+},{"../utils/warning":41}],47:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4562,7 +4562,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
-},{"./verifySubselectors":41}],21:[function(require,module,exports) {
+},{"./verifySubselectors":53}],29:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4707,7 +4707,7 @@ function createConnect() {
 }
 
 exports.default = createConnect();
-},{"../components/connectAdvanced":20,"../utils/shallowEqual":34,"./mapDispatchToProps":35,"./mapStateToProps":36,"./mergeProps":37,"./selectorFactory":38}],12:[function(require,module,exports) {
+},{"../components/connectAdvanced":28,"../utils/shallowEqual":43,"./mapDispatchToProps":44,"./mapStateToProps":45,"./mergeProps":46,"./selectorFactory":47}],17:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4733,7 +4733,7 @@ exports.Provider = _Provider2.default;
 exports.createProvider = _Provider.createProvider;
 exports.connectAdvanced = _connectAdvanced2.default;
 exports.connect = _connect2.default;
-},{"./components/Provider":19,"./components/connectAdvanced":20,"./connect/connect":21}],68:[function(require,module,exports) {
+},{"./components/Provider":27,"./components/connectAdvanced":28,"./connect/connect":29}],83:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -4767,7 +4767,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],69:[function(require,module,exports) {
+},{}],89:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -4842,7 +4842,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-},{"./emptyFunction":66}],70:[function(require,module,exports) {
+},{"./emptyFunction":85}],84:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -4879,7 +4879,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],72:[function(require,module,exports) {
+},{}],86:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -4945,7 +4945,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],81:[function(require,module,exports) {
+},{}],99:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -4968,7 +4968,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],78:[function(require,module,exports) {
+},{}],96:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -4991,7 +4991,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":81}],71:[function(require,module,exports) {
+},{"./isNode":99}],88:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -5029,7 +5029,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":78}],73:[function(require,module,exports) {
+},{"./isTextNode":96}],92:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -5054,7 +5054,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],17:[function(require,module,exports) {
+},{}],23:[function(require,module,exports) {
 /** @license React v16.2.0
  * react-dom.production.min.js
  *
@@ -5285,7 +5285,7 @@ var Sg={createPortal:Qg,findDOMNode:function(a){if(null==a)return null;if(1===a.
 E("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Pg(null,null,a,!1,function(){a._reactRootContainer=null})}),!0):!1},unstable_createPortal:Qg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:mb,EventPluginRegistry:Va,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:sb,ReactDOMEventListener:xd}};
 Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",rendererPackageName:"react-dom"});var Tg=Object.freeze({default:Sg}),Ug=Tg&&Sg||Tg;module.exports=Ug["default"]?Ug["default"]:Ug;
 
-},{"react":13,"fbjs/lib/ExecutionEnvironment":68,"object-assign":42,"fbjs/lib/emptyFunction":66,"fbjs/lib/EventListener":69,"fbjs/lib/getActiveElement":70,"fbjs/lib/shallowEqual":72,"fbjs/lib/containsNode":71,"fbjs/lib/focusNode":73,"fbjs/lib/emptyObject":65}],79:[function(require,module,exports) {
+},{"react":16,"fbjs/lib/ExecutionEnvironment":83,"object-assign":58,"fbjs/lib/emptyFunction":85,"fbjs/lib/EventListener":89,"fbjs/lib/getActiveElement":84,"fbjs/lib/shallowEqual":86,"fbjs/lib/containsNode":88,"fbjs/lib/focusNode":92,"fbjs/lib/emptyObject":87}],97:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -5316,7 +5316,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],75:[function(require,module,exports) {
+},{}],93:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -5353,7 +5353,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":79}],80:[function(require,module,exports) {
+},{"./hyphenate":97}],98:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -5383,7 +5383,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],76:[function(require,module,exports) {
+},{}],94:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -5421,7 +5421,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":80}],18:[function(require,module,exports) {
+},{"./camelize":98}],24:[function(require,module,exports) {
 /** @license React v16.2.0
  * react-dom.development.js
  *
@@ -20779,7 +20779,7 @@ if ("development" !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"react":13,"fbjs/lib/invariant":67,"fbjs/lib/warning":74,"fbjs/lib/ExecutionEnvironment":68,"object-assign":42,"fbjs/lib/emptyFunction":66,"fbjs/lib/EventListener":69,"fbjs/lib/getActiveElement":70,"fbjs/lib/shallowEqual":72,"fbjs/lib/containsNode":71,"fbjs/lib/focusNode":73,"fbjs/lib/emptyObject":65,"prop-types/checkPropTypes":51,"fbjs/lib/hyphenateStyleName":75,"fbjs/lib/camelizeStyleName":76}],14:[function(require,module,exports) {
+},{"react":16,"fbjs/lib/invariant":90,"fbjs/lib/warning":91,"fbjs/lib/ExecutionEnvironment":83,"object-assign":58,"fbjs/lib/emptyFunction":85,"fbjs/lib/EventListener":89,"fbjs/lib/getActiveElement":84,"fbjs/lib/shallowEqual":86,"fbjs/lib/containsNode":88,"fbjs/lib/focusNode":92,"fbjs/lib/emptyObject":87,"prop-types/checkPropTypes":66,"fbjs/lib/hyphenateStyleName":93,"fbjs/lib/camelizeStyleName":94}],18:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -20815,14 +20815,16 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.production.min.js":17,"./cjs/react-dom.development.js":18}],24:[function(require,module,exports) {
+},{"./cjs/react-dom.production.min.js":23,"./cjs/react-dom.development.js":24}],34:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var COUNTER_BUTTON_CLICKED = exports.COUNTER_BUTTON_CLICKED = 'COUNTER_BUTTON_CLICKED';
-},{}],11:[function(require,module,exports) {
+var NEW_GAME = exports.NEW_GAME = 'NEW_GAME';
+var MOVE = exports.MOVE = 'MOVE';
+},{}],14:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20853,57 +20855,7 @@ var counter = function counter() {
 };
 
 exports.default = counter;
-},{"../actionTypes":24}],10:[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _redux = require("redux");
-
-var _counter = require("./counter");
-
-var _counter2 = _interopRequireDefault(_counter);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Combines all reduces and
-// exports the final reducer.
-exports.default = (0, _redux.combineReducers)({ counter: _counter2.default });
-},{"redux":22,"./counter":11}],4:[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = configureStore;
-
-var _redux = require("redux");
-
-var _reducers = require("./reducers");
-
-var _reducers2 = _interopRequireDefault(_reducers);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Created and configures the store.
- */
-function configureStore() {
-  var store = (0, _redux.createStore)(_reducers2.default);
-
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./reducers', function () {
-      var nextRootReducer = require('./reducers');
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-
-  return store;
-}
-},{"redux":22,"./reducers":10}],94:[function(require,module,exports) {
+},{"../actionTypes":34}],71:[function(require,module,exports) {
 var global = (1,eval)("this");
 // Unique ID creation requires a high quality random # generator.  In the
 // browser this is a little complicated due to unknown quality of Math.random()
@@ -20939,7 +20891,7 @@ if (!rng) {
 
 module.exports = rng;
 
-},{}],95:[function(require,module,exports) {
+},{}],72:[function(require,module,exports) {
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -20964,7 +20916,7 @@ function bytesToUuid(buf, offset) {
 
 module.exports = bytesToUuid;
 
-},{}],93:[function(require,module,exports) {
+},{}],68:[function(require,module,exports) {
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -20995,7 +20947,419 @@ function v4(options, buf, offset) {
 
 module.exports = v4;
 
-},{"./lib/rng":94,"./lib/bytesToUuid":95}],53:[function(require,module,exports) {
+},{"./lib/rng":71,"./lib/bytesToUuid":72}],15:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _v = require("uuid/v4");
+
+var _v2 = _interopRequireDefault(_v);
+
+var _actionTypes = require("../actionTypes");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var grid = [[{}, {}, {}, {}], [{}, {}, {}, {}], [{}, {}, {}, {}], [{}, {}, {}, {}]];
+
+/**
+ * Gets a random number between zero
+ * and the given number.
+ *
+ * @param {Number} num the max number.
+ */
+function getRandomBetween0And(num) {
+  return Math.floor(Math.random() * num);
+}
+
+/**
+ * Loops the grid and calls a callback with the indexes
+ * of the current grid item.
+ *
+ * @param {Function} callback the callback function.
+ */
+function loopGrid(callback) {
+  for (var i = 0; i < 4; i++) {
+    for (var j = 0; j < 4; j++) {
+      callback(j, i);
+    }
+  }
+}
+
+/**
+ * Clears the grid.
+ */
+function clearGrid() {
+  loopGrid(function (x, y) {
+    grid[y][x] = undefined;
+  });
+}
+
+/**
+ * Returns all empty cells on the grid.
+ */
+function getAllEmptyCells() {
+  var cells = [];
+
+  loopGrid(function (x, y) {
+    if (!grid[y][x]) {
+      cells.push({
+        x: x,
+        y: y
+      });
+    }
+  });
+
+  return cells;
+}
+
+/**
+ * Finds the position of
+ * a random empty cell.
+ * Returns undefined if no empty cell exist.
+ */
+function getRandomEmptyCell() {
+  var emptyCells = getAllEmptyCells();
+  if (emptyCells.length === 0) return undefined;
+
+  var randomIndex = getRandomBetween0And(emptyCells.length);
+  var cell = emptyCells[randomIndex];
+
+  return cell;
+}
+
+/**
+ * Spawns a new tile in a random empty cell.
+ * Returns undefined if there is no room for a new tile.
+ */
+function spawnTile() {
+  var id = (0, _v2.default)();
+  var value = Math.random() >= 0.9 ? 4 : 2;
+  var cell = getRandomEmptyCell();
+
+  if (!cell) return undefined;
+
+  var tile = {
+    id: id,
+    value: value,
+    x: cell.x,
+    y: cell.y
+  };
+
+  grid[cell.y][cell.x] = {
+    id: id,
+    value: value
+  };
+
+  return tile;
+}
+
+/**
+ * Resets the grid for a new game.
+ */
+function newGame() {
+  clearGrid();
+  var tiles = [];
+
+  for (var i = 0; i < 2; i++) {
+    var tile = spawnTile();
+    tiles.push(tile);
+  }
+
+  return tiles;
+}
+
+/**
+ * Tries to move the tile to given direction.
+ * A tile can be moved to the next cell if:
+ *  * next cell is empty
+ *  * next cell is not empty, the tile in the next cell has
+ *    the same value and the moving tile is not spawned from merge.
+ *
+ * @param {Object} tile the moving tile.
+ * @param {object} direction the direction of the movement.
+ */
+function tryToMoveTile(tile, direction) {
+  // Calculates the position of the next cell
+  // in the direction of the movement.
+  var x = tile.x + direction.x;
+  var y = tile.y + direction.y;
+
+  // If next cell is out of bound stop.
+  if (x > 3 || y > 3 || x < 0 || y < 0) {
+    return undefined;
+  }
+
+  var cell = grid[y][x];
+
+  // If next cell is empty
+  // move this tile to the next cell.
+  if (!cell) {
+    return {
+      id: tile.id,
+      value: tile.value,
+      x: x,
+      y: y,
+      fromMerge: tile.fromMerge
+    };
+  }
+
+  // Checks tile in the next cell has the same value
+  // and this tile is not from merge that happened in
+  // in this move merge the tiles.
+  if (cell.value === tile.value && !tile.fromMerge && !cell.fromMerge) {
+    grid[y][x] = undefined;
+    return {
+      id: (0, _v2.default)(),
+      value: tile.value * 2,
+      x: x,
+      y: y,
+      fromMerge: {
+        tile1: tile.id,
+        tile2: cell.id
+      }
+    };
+  }
+
+  return undefined;
+}
+
+/**
+ * Checks if any of the tiles can be moved
+ * in the next move.
+ */
+function checkIfAnyTileCanMove() {
+  var canAnyTileMove = false;
+  loopGrid(function (x, y) {
+    if (canAnyTileMove) return;
+
+    var cell = grid[y][x];
+    var tile = {
+      id: cell.id,
+      value: cell.value,
+      x: x,
+      y: y
+    };
+    // Checks move to the right.
+    var canMoveRight = !!tryToMoveTile(tile, { x: 1, y: 0 });
+    canAnyTileMove = canAnyTileMove || canMoveRight;
+    if (canAnyTileMove) return;
+    // Checks move to the left.
+    var canMoveLeft = !!tryToMoveTile(tile, { x: -1, y: 0 });
+    canAnyTileMove = canAnyTileMove || canMoveLeft;
+    if (canAnyTileMove) return;
+    // Checks move to the top.
+    var canMoveUp = !!tryToMoveTile(tile, { x: 0, y: -1 });
+    canAnyTileMove = canAnyTileMove || canMoveUp;
+    if (canAnyTileMove) return;
+    // Checks move to the bottom.
+    var canMoveDown = !!tryToMoveTile(tile, { x: 0, y: 1 });
+    canAnyTileMove = canAnyTileMove || canMoveDown;
+  });
+
+  return canAnyTileMove;
+}
+
+/**
+ * Tries to move all the tiles to the given direction.
+ * If at least one tile moves spawns a new tile.
+ *
+ * @param {Object} direction the direction of movement.
+ */
+function move(direction) {
+  // Before move all cells must
+  // be set as not spawned from merge.
+  loopGrid(function (x, y) {
+    if (grid[y][x]) {
+      grid[y][x].fromMerge = undefined;
+    }
+  });
+
+  var hasAnyTileMoved = false;
+  var movingAxis = direction.x !== 0 ? 'x' : 'y';
+  var fixedAxis = direction.x === 0 ? 'x' : 'y';
+  var tiles = [];
+  var axes = {
+    x: direction.x,
+    y: direction.y
+  };
+  axes[movingAxis] = direction[movingAxis] > 0 ? 3 : 0;
+
+  while (axes[fixedAxis] < 4) {
+    while (axes[movingAxis] >= 0 && axes[movingAxis] < 4) {
+      var cell = grid[axes.y][axes.x];
+
+      if (cell) {
+        var result = {};
+        var tile = {
+          id: cell.id,
+          value: cell.value,
+          x: axes.x,
+          y: axes.y
+        };
+
+        while (result && tile[movingAxis] < 4 && tile[movingAxis] >= 0) {
+          result = tryToMoveTile(tile, direction);
+          if (result) {
+            hasAnyTileMoved = true;
+            tile = result;
+          }
+        }
+
+        grid[axes.y][axes.x] = undefined;
+        grid[tile.y][tile.x] = {
+          id: tile.id,
+          value: tile.value,
+          fromMerge: tile.fromMerge
+        };
+
+        tiles.push(tile);
+      }
+
+      axes[movingAxis] = direction[movingAxis] > 0 ? axes[movingAxis] - 1 : axes[movingAxis] + 1;
+    }
+
+    axes[movingAxis] = direction[movingAxis] > 0 ? 3 : 0;
+    axes[fixedAxis] += 1;
+  }
+
+  if (hasAnyTileMoved) {
+    var newTile = spawnTile();
+    if (newTile) tiles.push(newTile);
+  }
+  return tiles;
+}
+
+var tiles = function tiles() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
+  switch (action.type) {
+    case _actionTypes.NEW_GAME:
+      {
+        var newState = newGame();
+        return newState;
+      }
+    case _actionTypes.MOVE:
+      {
+        var _newState = move(action.direction);
+        var emptyCells = getAllEmptyCells();
+        if (emptyCells.length === 0) {
+          var canAnyTileMove = checkIfAnyTileCanMove();
+          if (!canAnyTileMove) return [];
+        }
+        return _newState;
+      }
+    default:
+      {
+        return state;
+      }
+  }
+};
+
+exports.default = tiles;
+},{"uuid/v4":68,"../actionTypes":34}],9:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = require("redux");
+
+var _counter = require("./counter");
+
+var _counter2 = _interopRequireDefault(_counter);
+
+var _tiles = require("./tiles");
+
+var _tiles2 = _interopRequireDefault(_tiles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Combines all reduces and
+// exports the final reducer.
+exports.default = (0, _redux.combineReducers)({ counter: _counter2.default, tiles: _tiles2.default });
+},{"redux":30,"./counter":14,"./tiles":15}],3:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = configureStore;
+
+var _redux = require("redux");
+
+var _reducers = require("./reducers");
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Created and configures the store.
+ */
+function configureStore() {
+  var store = (0, _redux.createStore)(_reducers2.default);
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('./reducers', function () {
+      var nextRootReducer = require('./reducers');
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+
+  return store;
+}
+},{"redux":30,"./reducers":9}],19:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.counterButtonClicked = counterButtonClicked;
+exports.newGame = newGame;
+exports.move = move;
+
+var _actionTypes = require("../actionTypes");
+
+var ActionTypes = _interopRequireWildcard(_actionTypes);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+/**
+ * Creates and returns a COUNTER_BUTTON_CLICKED action.
+ */
+function counterButtonClicked() {
+  var action = {
+    type: ActionTypes.COUNTER_BUTTON_CLICKED
+  };
+
+  return action;
+}
+
+/**
+ * Create and returns a NEW_GAME action.
+ */
+function newGame() {
+  var action = {
+    type: ActionTypes.NEW_GAME
+  };
+
+  return action;
+}
+
+function move(direction) {
+  var action = {
+    type: ActionTypes.MOVE,
+    direction: direction
+  };
+  return action;
+}
+},{"../actionTypes":34}],70:[function(require,module,exports) {
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
  *
@@ -21009,7 +21373,7 @@ module.exports = function isObject(val) {
   return val != null && typeof val === 'object' && Array.isArray(val) === false;
 };
 
-},{}],43:[function(require,module,exports) {
+},{}],60:[function(require,module,exports) {
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
  *
@@ -21048,7 +21412,7 @@ module.exports = function isPlainObject(o) {
   return true;
 };
 
-},{"isobject":53}],44:[function(require,module,exports) {
+},{"isobject":70}],61:[function(require,module,exports) {
 /*
  *          __        ___
  *    _____/ /___  __/ (_)____
@@ -22658,7 +23022,7 @@ module.exports = function isPlainObject(o) {
 	return stylis
 }));
 
-},{}],46:[function(require,module,exports) {
+},{}],62:[function(require,module,exports) {
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -22710,7 +23074,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],23:[function(require,module,exports) {
+},{}],31:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24433,7 +24797,7 @@ exports.withTheme = wrapWithTheme;
 exports.ServerStyleSheet = ServerStyleSheet;
 exports.StyleSheetManager = StyleSheetManager;
 exports.default = styled;
-},{"is-plain-object":43,"stylis":44,"react":13,"prop-types":45,"hoist-non-react-statics":46}],82:[function(require,module,exports) {
+},{"is-plain-object":60,"stylis":61,"react":16,"prop-types":57,"hoist-non-react-statics":62}],10:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24451,7 +24815,7 @@ var Wrapper = _styledComponents2.default.div.withConfig({
 })(["display:flex;justify-content:center;margin-top:15px;"]);
 
 exports.default = Wrapper;
-},{"styled-components":23}],7:[function(require,module,exports) {
+},{"styled-components":31}],6:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24465,7 +24829,7 @@ exports.default = {
   font: '#333333',
   fontAlt: 'white'
 };
-},{}],83:[function(require,module,exports) {
+},{}],20:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24487,7 +24851,7 @@ var Container = _styledComponents2.default.div.withConfig({
 })(["display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(10px,auto);grid-row-gap:10px;background-color:", ";border-radius:10px;padding:15px;max-width:475px;"], _colors2.default.mainLighter);
 
 exports.default = Container;
-},{"styled-components":23,"../../styles/colors":7}],84:[function(require,module,exports) {
+},{"styled-components":31,"../../styles/colors":6}],21:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24509,7 +24873,7 @@ var ContainerItem = _styledComponents2.default.div.withConfig({
 });
 
 exports.default = ContainerItem;
-},{"styled-components":23}],8:[function(require,module,exports) {
+},{"styled-components":31}],7:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24537,7 +24901,7 @@ var fontColors = exports.fontColors = {
   main: (0, _styledComponents.css)(["color:", ";"], _colors2.default.font),
   alt: (0, _styledComponents.css)(["color:", ";"], _colors2.default.fontAlt)
 };
-},{"styled-components":23,"./colors":7}],97:[function(require,module,exports) {
+},{"styled-components":31,"./colors":6}],11:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24559,7 +24923,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = (0, _styledComponents2.default)(_ContainerItem2.default).withConfig({
   displayName: "Manual"
 })(["", ";text-align:center;"], _types.fontSizes.small);
-},{"styled-components":23,"../../components/ContainerItem":84,"../../styles/types":8}],98:[function(require,module,exports) {
+},{"styled-components":31,"../../components/ContainerItem":21,"../../styles/types":7}],13:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24579,7 +24943,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = (0, _styledComponents2.default)(_ContainerItem2.default).withConfig({
   displayName: "Score"
 })(["text-align:right;"]);
-},{"styled-components":23,"../../components/ContainerItem":84}],99:[function(require,module,exports) {
+},{"styled-components":31,"../../components/ContainerItem":21}],12:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24601,7 +24965,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = (0, _styledComponents2.default)(_ContainerItem2.default).withConfig({
   displayName: "Github"
 })(["", ";text-align:right;"], _types.fontSizes.medium);
-},{"styled-components":23,"../../components/ContainerItem":84,"../../styles/types":8}],86:[function(require,module,exports) {
+},{"styled-components":31,"../../components/ContainerItem":21,"../../styles/types":7}],32:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24652,6 +25016,7 @@ function mapTilesToState(tiles, state) {
     if (result) {
       result.position.x = calculateX(tile.x);
       result.position.y = calculateY(tile.y);
+      result.justSpawned = false;
       return;
     }
 
@@ -24663,12 +25028,14 @@ function mapTilesToState(tiles, state) {
         return stateTile.id === tile.fromMerge.tile1;
       });
       tile1.position.x = calculateX(tile.x);
-      tile1.position.y = calculateX(tile.y);
+      tile1.position.y = calculateY(tile.y);
+      tile1.justSpawned = false;
       var tile2 = newState.find(function (stateTile) {
         return stateTile.id === tile.fromMerge.tile2;
       });
       tile2.position.x = calculateX(tile.x);
-      tile2.position.y = calculateX(tile.y);
+      tile2.position.y = calculateY(tile.y);
+      tile2.justSpawned = false;
       return;
     }
 
@@ -24680,7 +25047,8 @@ function mapTilesToState(tiles, state) {
       position: {
         x: calculateX(tile.x),
         y: calculateY(tile.y)
-      }
+      },
+      justSpawned: true
     });
   });
 
@@ -24717,7 +25085,7 @@ function mergeTiles(tilesFromMerge, stateBeforeMerge) {
 
   return stateAfterMerge;
 }
-},{}],90:[function(require,module,exports) {
+},{}],54:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24796,7 +25164,9 @@ function getTileType(value) {
 
 var StyledTile = _styledComponents2.default.div.withConfig({
   displayName: "StyledTile"
-})(["animation:", " 0.3s;transition:left 0.5s ", ",top 0.2s ", ";position:absolute;left:", "px;top:", "px;display:flex;justify-content:center;align-items:center;border-radius:10px;width:100px;height:140px;background-color:", ";box-shadow:0 10px 0 ", ";", ";", ";"], bounceIn, cubicBezier, cubicBezier, function (props) {
+})(["opacity:0;animation:", " 0.3s ", ";animation-fill-mode:forwards;transition:left 0.5s ", ",top 0.2s ", ";position:absolute;left:", "px;top:", "px;display:flex;justify-content:center;align-items:center;border-radius:10px;width:100px;height:140px;background-color:", ";box-shadow:0 10px 0 ", ";", ";", ";"], bounceIn, function (props) {
+  return props.justSpawned ? '0.2s' : '0s';
+}, cubicBezier, cubicBezier, function (props) {
   return props.position.x;
 }, function (props) {
   return props.position.y;
@@ -24811,7 +25181,7 @@ var StyledTile = _styledComponents2.default.div.withConfig({
 });
 
 exports.default = StyledTile;
-},{"styled-components":23,"../../styles/colors":7,"../../styles/types":8}],88:[function(require,module,exports) {
+},{"styled-components":31,"../../styles/colors":6,"../../styles/types":7}],49:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24835,7 +25205,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Tile = function Tile(props) {
   return _react2.default.createElement(
     _StyledTile2.default,
-    { value: props.value, position: props.position },
+    { value: props.value, position: props.position, justSpawned: props.justSpawned },
     props.value
   );
 };
@@ -24849,7 +25219,7 @@ Tile.propTypes = {
 };
 
 exports.default = Tile;
-},{"react":13,"prop-types":45,"./StyledTile":90}],91:[function(require,module,exports) {
+},{"react":16,"prop-types":57,"./StyledTile":54}],55:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24871,7 +25241,7 @@ var StyledGrid = _styledComponents2.default.div.withConfig({
 })(["background-color:", ";display:inline-grid;grid-template-columns:100px 100px 100px 100px;grid-template-rows:150px 150px 150px 150px;grid-column-gap:15px;grid-row-gap:10px;"], _colors2.default.mainLighter);
 
 exports.default = StyledGrid;
-},{"styled-components":23,"../../styles/colors":7}],92:[function(require,module,exports) {
+},{"styled-components":31,"../../styles/colors":6}],56:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24893,7 +25263,7 @@ var StyledGridItem = _styledComponents2.default.div.withConfig({
 })(["background-color:", ";border-radius:10px;"], _colors2.default.mainLight);
 
 exports.default = StyledGridItem;
-},{"styled-components":23,"../../styles/colors":7}],89:[function(require,module,exports) {
+},{"styled-components":31,"../../styles/colors":6}],50:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24975,7 +25345,7 @@ exports.default = Gird;
 Gird.propTypes = {
   size: _propTypes2.default.number.isRequired
 };
-},{"react":13,"prop-types":45,"./StyledGird":91,"./StyledGridItem":92}],87:[function(require,module,exports) {
+},{"react":16,"prop-types":57,"./StyledGird":55,"./StyledGridItem":56}],33:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24997,7 +25367,7 @@ var Wrapper = _styledComponents2.default.div.withConfig({
 })(["position:relative;background-color:", ";"], _colors2.default.mainLighter);
 
 exports.default = Wrapper;
-},{"styled-components":23,"../../styles/colors":7}],85:[function(require,module,exports) {
+},{"styled-components":31,"../../styles/colors":6}],22:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25098,6 +25468,9 @@ var TilesGrid = function (_React$Component) {
   }, {
     key: "doWork",
     value: function doWork(propTiles) {
+      if (!propTiles) {
+        return;
+      }
       if (this.state.isWorking) {
         queue.push(propTiles);
         return;
@@ -25117,6 +25490,10 @@ var TilesGrid = function (_React$Component) {
     value: function resolveNewState(propTiles) {
       var _this2 = this;
 
+      if (propTiles.length === 0) {
+        this.setState({ tiles: [], isWorking: false });
+        return;
+      }
       // Resolves the state without the tiles that
       // spawned from merge.
       var newState = (0, _utils.mapTilesToState)(propTiles, this.state.tiles);
@@ -25159,7 +25536,12 @@ var TilesGrid = function (_React$Component) {
           "div",
           null,
           this.state.tiles.map(function (tile) {
-            return _react2.default.createElement(_Tile2.default, { key: tile.id, value: tile.value, position: tile.position });
+            return _react2.default.createElement(_Tile2.default, {
+              key: tile.id,
+              value: tile.value,
+              position: tile.position,
+              justSpawned: tile.justSpawned
+            });
           })
         ),
         _react2.default.createElement(_Grid2.default, { size: 16 })
@@ -25180,7 +25562,7 @@ TilesGrid.propTypes = {
     value: _propTypes2.default.number.isRequired
   })).isRequired
 };
-},{"react":13,"prop-types":45,"./utils":86,"../../components/Tile":88,"../../components/Grid":89,"./Wrapper":87}],9:[function(require,module,exports) {
+},{"react":16,"prop-types":57,"./utils":32,"../../components/Tile":49,"../../components/Grid":50,"./Wrapper":33}],8:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25189,13 +25571,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _reactRedux = require("react-redux");
+
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _v = require("uuid/v4");
+var _propTypes = require("prop-types");
 
-var _v2 = _interopRequireDefault(_v);
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _actions = require("../../actions");
 
 var _Wrapper = require("./Wrapper");
 
@@ -25233,42 +25619,24 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var tiles = [{
-  id: (0, _v2.default)(),
-  x: 0,
-  y: 0,
-  value: 2
-}, {
-  id: (0, _v2.default)(),
-  x: 1,
-  y: 0,
-  value: 8
-}, {
-  id: (0, _v2.default)(),
-  x: 2,
-  y: 0,
-  value: 236
-}, {
-  id: (0, _v2.default)(),
-  x: 3,
-  y: 0,
-  value: 472
-}, {
-  id: (0, _v2.default)(),
-  x: 0,
-  y: 1,
-  value: 4
-}, {
-  id: (0, _v2.default)(),
-  x: 2,
-  y: 1,
-  value: 128
-}, {
-  id: (0, _v2.default)(),
-  x: 0,
-  y: 2,
-  value: 1888
-}];
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    tiles: state.tiles
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    newGame: function newGame() {
+      var action = (0, _actions.newGame)();
+      dispatch(action);
+    },
+    move: function move(direction) {
+      var action = (0, _actions.move)(direction);
+      dispatch(action);
+    }
+  };
+};
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -25281,10 +25649,50 @@ var App = function (_React$Component) {
     _this.state = {
       score: 6216
     };
+
+    _this.keyDownHandler = _this.keyDownHandler.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener('keydown', this.keyDownHandler, false);
+      this.props.newGame();
+    }
+  }, {
+    key: "keyDownHandler",
+    value: function keyDownHandler(e) {
+      // If -> or D move to the right.
+      if (e.keyCode === 39 || e.keyCode === 68) {
+        this.props.move({
+          x: 1,
+          y: 0
+        });
+      }
+      // If <- or A move to the left.
+      if (e.keyCode === 37 || e.keyCode === 65) {
+        this.props.move({
+          x: -1,
+          y: 0
+        });
+      }
+      // If <- or A move to the top.
+      if (e.keyCode === 38 || e.keyCode === 87) {
+        this.props.move({
+          x: 0,
+          y: -1
+        });
+      }
+      // If ^ or W move to the bottom.
+      if (e.keyCode === 40 || e.keyCode === 83) {
+        this.props.move({
+          x: 0,
+          y: 1
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -25306,7 +25714,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             _ContainerItem2.default,
             { column: "1 / span 2", row: "2" },
-            _react2.default.createElement(_TilesGrid2.default, { tiles: tiles })
+            _react2.default.createElement(_TilesGrid2.default, { tiles: this.props.tiles })
           ),
           _react2.default.createElement(
             _Manual2.default,
@@ -25326,10 +25734,19 @@ var App = function (_React$Component) {
   return App;
 }(_react2.default.Component);
 
-exports.default = App;
-},{"react":13,"uuid/v4":93,"./Wrapper":82,"../../components/Container":83,"../../components/ContainerItem":84,"./Manual":97,"./Score":98,"./Github":99,"../TilesGrid":85}],6:[function(require,module,exports) {
+App.propTypes = {
+  tiles: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    x: _propTypes2.default.number.isRequired,
+    y: _propTypes2.default.number.isRequired,
+    value: _propTypes2.default.number.isRequired
+  })).isRequired,
+  newGame: _propTypes2.default.func.isRequired
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
+},{"react-redux":17,"react":16,"prop-types":57,"../../actions":19,"./Wrapper":10,"../../components/Container":20,"../../components/ContainerItem":21,"./Manual":11,"./Score":13,"./Github":12,"../TilesGrid":22}],5:[function(require,module,exports) {
 module.exports="/4f0fb75e16a7066450f5b91bc8cc7ac7.ttf";
-},{}],5:[function(require,module,exports) {
+},{}],4:[function(require,module,exports) {
 "use strict";
 
 var _templateObject = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Days One';\n    src: url(", ");\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n  body {\n    ", ";\n    ", ";\n    ", ";\n    background-color: ", ";\n    margin: 0;\n  }\n"], ["\n  @font-face {\n    font-family: 'Days One';\n    src: url(", ");\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n  body {\n    ", ";\n    ", ";\n    ", ";\n    background-color: ", ";\n    margin: 0;\n  }\n"]);
@@ -25355,7 +25772,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 (0, _styledComponents.injectGlobal)(_templateObject, _DaysOneRegular2.default, types.fontFamily, types.fontSizes.medium, types.fontColors.main, _colors2.default.background);
-},{"styled-components":23,"./fonts/DaysOne-Regular.ttf":6,"./styles/colors":7,"./styles/types":8}],2:[function(require,module,exports) {
+},{"styled-components":31,"./fonts/DaysOne-Regular.ttf":5,"./styles/colors":6,"./styles/types":7}],2:[function(require,module,exports) {
 "use strict";
 
 var _reactRedux = require("react-redux");
@@ -25392,7 +25809,7 @@ _reactDom2.default.render(_react2.default.createElement(
 if (module.hot) {
   module.hot.accept();
 }
-},{"react-redux":12,"react":13,"react-dom":14,"./configureStore":4,"./containers/App":9,"./globalStyles":5}],0:[function(require,module,exports) {
+},{"react-redux":17,"react":16,"react-dom":18,"./configureStore":3,"./containers/App":8,"./globalStyles":4}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module() {
@@ -25410,7 +25827,7 @@ function Module() {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:65444/');
+  var ws = new WebSocket('ws://localhost:52514/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 

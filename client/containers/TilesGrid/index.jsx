@@ -53,6 +53,9 @@ export default class TilesGrid extends React.Component {
    * @param {*} propTiles the tiles provided by the props.
    */
   doWork(propTiles) {
+    if (!propTiles) {
+      return;
+    }
     if (this.state.isWorking) {
       queue.push(propTiles);
       return;
@@ -67,6 +70,10 @@ export default class TilesGrid extends React.Component {
    * @param {Array} propTiles the tiles provided by the props.
    */
   resolveNewState(propTiles) {
+    if (propTiles.length === 0) {
+      this.setState({ tiles: [], isWorking: false });
+      return;
+    }
     // Resolves the state without the tiles that
     // spawned from merge.
     const newState = mapTilesToState(propTiles, this.state.tiles);
@@ -103,7 +110,12 @@ export default class TilesGrid extends React.Component {
       <Wrapper>
         <div>
           {this.state.tiles.map(tile => (
-            <Tile key={tile.id} value={tile.value} position={tile.position} />
+            <Tile
+              key={tile.id}
+              value={tile.value}
+              position={tile.position}
+              justSpawned={tile.justSpawned}
+            />
           ))}
         </div>
         <Grid size={16} />

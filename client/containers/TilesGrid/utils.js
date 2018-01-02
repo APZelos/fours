@@ -36,6 +36,7 @@ export function mapTilesToState(tiles, state) {
     if (result) {
       result.position.x = calculateX(tile.x);
       result.position.y = calculateY(tile.y);
+      result.justSpawned = false;
       return;
     }
 
@@ -45,10 +46,12 @@ export function mapTilesToState(tiles, state) {
     if (tile.fromMerge) {
       const tile1 = newState.find(stateTile => stateTile.id === tile.fromMerge.tile1);
       tile1.position.x = calculateX(tile.x);
-      tile1.position.y = calculateX(tile.y);
+      tile1.position.y = calculateY(tile.y);
+      tile1.justSpawned = false;
       const tile2 = newState.find(stateTile => stateTile.id === tile.fromMerge.tile2);
       tile2.position.x = calculateX(tile.x);
-      tile2.position.y = calculateX(tile.y);
+      tile2.position.y = calculateY(tile.y);
+      tile2.justSpawned = false;
       return;
     }
 
@@ -61,6 +64,7 @@ export function mapTilesToState(tiles, state) {
         x: calculateX(tile.x),
         y: calculateY(tile.y),
       },
+      justSpawned: true,
     });
   });
 

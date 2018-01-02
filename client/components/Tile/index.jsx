@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import StyledTile from './StyledTile';
 
 const Tile = props => (
-  <StyledTile value={props.value} position={props.position}>
+  <StyledTile value={props.value} position={props.position} justSpawned={props.justSpawned}>
     {props.value}
   </StyledTile>
 );

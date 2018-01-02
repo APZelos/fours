@@ -92,7 +92,9 @@ function getTileType(value) {
 }
 
 const StyledTile = styled.div`
-  animation: ${bounceIn} 0.3s;
+  opacity: 0;
+  animation: ${bounceIn} 0.3s ${props => (props.justSpawned ? '0.2s' : '0s')};
+  animation-fill-mode: forwards;
   transition: left 0.5s ${cubicBezier}, top 0.2s ${cubicBezier};
   position: absolute;
   left: ${props => props.position.x}px;
