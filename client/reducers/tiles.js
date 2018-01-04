@@ -76,9 +76,9 @@ function getRandomEmptyCell() {
  * Spawns a new tile in a random empty cell.
  * Returns undefined if there is no room for a new tile.
  */
-function spawnTile() {
+function spawnTile(probability = 0.9) {
   const id = uuidv4();
-  const value = Math.random() >= 0.9 ? 4 : 2;
+  const value = Math.random() >= probability ? 4 : 2;
   const cell = getRandomEmptyCell();
 
   if (!cell) return undefined;
@@ -264,7 +264,7 @@ function move(direction) {
   }
 
   if (hasAnyTileMoved) {
-    const newTile = spawnTile();
+    const newTile = spawnTile(0.6);
     if (newTile) tiles.push(newTile);
   }
   return tiles;

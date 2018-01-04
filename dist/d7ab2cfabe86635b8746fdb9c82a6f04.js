@@ -21038,8 +21038,10 @@ function getRandomEmptyCell() {
  * Returns undefined if there is no room for a new tile.
  */
 function spawnTile() {
+  var probability = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.9;
+
   var id = (0, _v2.default)();
-  var value = Math.random() >= 0.9 ? 4 : 2;
+  var value = Math.random() >= probability ? 4 : 2;
   var cell = getRandomEmptyCell();
 
   if (!cell) return undefined;
@@ -21225,7 +21227,7 @@ function move(direction) {
   }
 
   if (hasAnyTileMoved) {
-    var newTile = spawnTile();
+    var newTile = spawnTile(0.6);
     if (newTile) tiles.push(newTile);
   }
   return tiles;
