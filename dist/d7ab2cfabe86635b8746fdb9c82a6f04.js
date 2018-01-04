@@ -21136,8 +21136,6 @@ function tryToMoveTile(tile, direction) {
 function checkIfAnyTileCanMove() {
   var canAnyTileMove = false;
   loopGrid(function (x, y) {
-    if (canAnyTileMove) return;
-
     var cell = grid[y][x];
     var tile = {
       id: cell.id,
@@ -21148,18 +21146,21 @@ function checkIfAnyTileCanMove() {
     // Checks move to the right.
     var canMoveRight = !!tryToMoveTile(tile, { x: 1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveRight;
-    if (canAnyTileMove) return;
+    if (canAnyTileMove) return true;
     // Checks move to the left.
     var canMoveLeft = !!tryToMoveTile(tile, { x: -1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveLeft;
-    if (canAnyTileMove) return;
+    if (canAnyTileMove) return true;
     // Checks move to the top.
     var canMoveUp = !!tryToMoveTile(tile, { x: 0, y: -1 });
     canAnyTileMove = canAnyTileMove || canMoveUp;
-    if (canAnyTileMove) return;
+    if (canAnyTileMove) return true;
     // Checks move to the bottom.
     var canMoveDown = !!tryToMoveTile(tile, { x: 0, y: 1 });
     canAnyTileMove = canAnyTileMove || canMoveDown;
+    if (canAnyTileMove) return true;
+
+    return false;
   });
 
   return canAnyTileMove;

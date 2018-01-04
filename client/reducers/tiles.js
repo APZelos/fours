@@ -175,8 +175,6 @@ function tryToMoveTile(tile, direction) {
 function checkIfAnyTileCanMove() {
   let canAnyTileMove = false;
   loopGrid((x, y) => {
-    if (canAnyTileMove) return;
-
     const cell = grid[y][x];
     const tile = {
       id: cell.id,
@@ -187,18 +185,21 @@ function checkIfAnyTileCanMove() {
     // Checks move to the right.
     const canMoveRight = !!tryToMoveTile(tile, { x: 1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveRight;
-    if (canAnyTileMove) return;
+    if (canAnyTileMove) return true;
     // Checks move to the left.
     const canMoveLeft = !!tryToMoveTile(tile, { x: -1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveLeft;
-    if (canAnyTileMove) return;
+    if (canAnyTileMove) return true;
     // Checks move to the top.
     const canMoveUp = !!tryToMoveTile(tile, { x: 0, y: -1 });
     canAnyTileMove = canAnyTileMove || canMoveUp;
-    if (canAnyTileMove) return;
+    if (canAnyTileMove) return true;
     // Checks move to the bottom.
     const canMoveDown = !!tryToMoveTile(tile, { x: 0, y: 1 });
     canAnyTileMove = canAnyTileMove || canMoveDown;
+    if (canAnyTileMove) return true;
+
+    return false;
   });
 
   return canAnyTileMove;
