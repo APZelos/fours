@@ -17,12 +17,15 @@ function getRandomBetween0And(num) {
  * Loops the grid and calls a callback with the indexes
  * of the current grid item.
  *
- * @param {Function} callback the callback function.
+ * @param {Function} callback the callback function. Return true to break.
  */
 function loopGrid(callback) {
+  let mustBreak = false;
   for (let i = 0; i < 4; i++) {
+    if (mustBreak) break;
     for (let j = 0; j < 4; j++) {
-      callback(j, i);
+      mustBreak = callback(j, i);
+      if (mustBreak) break;
     }
   }
 }
