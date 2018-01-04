@@ -208,14 +208,6 @@ function checkIfAnyTileCanMove() {
  * @param {Object} direction the direction of movement.
  */
 function move(direction) {
-  // Before move all cells must
-  // be set as not spawned from merge.
-  loopGrid((x, y) => {
-    if (grid[y][x]) {
-      grid[y][x].fromMerge = undefined;
-    }
-  });
-
   let hasAnyTileMoved = false;
   const movingAxis = direction.x !== 0 ? 'x' : 'y';
   const fixedAxis = direction.x === 0 ? 'x' : 'y';
@@ -231,6 +223,9 @@ function move(direction) {
       const cell = grid[axes.y][axes.x];
 
       if (cell) {
+        // Resets from merge.
+        cell.fromMerge = undefined;
+
         let result = {};
         let tile = {
           id: cell.id,
