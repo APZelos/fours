@@ -21,12 +21,14 @@ export default class TilesGrid extends React.Component {
       isWorking: false,
     };
 
+    this.keyDownHandler = this.keyDownHandler.bind(this);
     this.getNextOnQueue = this.getNextOnQueue.bind(this);
     this.doWork = this.doWork.bind(this);
     this.resolveNewState = this.resolveNewState.bind(this);
   }
 
   componentDidMount() {
+    document.addEventListener('keydown', this.keyDownHandler, false);
     this.doWork(this.props.tiles);
   }
 
@@ -107,6 +109,38 @@ export default class TilesGrid extends React.Component {
     }, 200);
   }
 
+  keyDownHandler(e) {
+    if (this.state.isWorking) return;
+    // If -> or D move to the right.
+    if (e.keyCode === 39 || e.keyCode === 68) {
+      this.props.move({
+        x: 1,
+        y: 0,
+      });
+    }
+    // If <- or A move to the left.
+    if (e.keyCode === 37 || e.keyCode === 65) {
+      this.props.move({
+        x: -1,
+        y: 0,
+      });
+    }
+    // If <- or A move to the top.
+    if (e.keyCode === 38 || e.keyCode === 87) {
+      this.props.move({
+        x: 0,
+        y: -1,
+      });
+    }
+    // If ^ or W move to the bottom.
+    if (e.keyCode === 40 || e.keyCode === 83) {
+      this.props.move({
+        x: 0,
+        y: 1,
+      });
+    }
+  }
+
   render() {
     return (
       <Wrapper>
@@ -132,4 +166,5 @@ TilesGrid.propTypes = {
     y: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
   })).isRequired,
+  move: PropTypes.func.isRequired,
 };

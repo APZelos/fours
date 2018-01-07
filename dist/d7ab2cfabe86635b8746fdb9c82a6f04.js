@@ -25404,6 +25404,7 @@ var TilesGrid = function (_React$Component) {
       isWorking: false
     };
 
+    _this.keyDownHandler = _this.keyDownHandler.bind(_this);
     _this.getNextOnQueue = _this.getNextOnQueue.bind(_this);
     _this.doWork = _this.doWork.bind(_this);
     _this.resolveNewState = _this.resolveNewState.bind(_this);
@@ -25413,6 +25414,7 @@ var TilesGrid = function (_React$Component) {
   _createClass(TilesGrid, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      document.addEventListener('keydown', this.keyDownHandler, false);
       this.doWork(this.props.tiles);
     }
   }, {
@@ -25507,6 +25509,39 @@ var TilesGrid = function (_React$Component) {
       }, 200);
     }
   }, {
+    key: "keyDownHandler",
+    value: function keyDownHandler(e) {
+      if (this.state.isWorking) return;
+      // If -> or D move to the right.
+      if (e.keyCode === 39 || e.keyCode === 68) {
+        this.props.move({
+          x: 1,
+          y: 0
+        });
+      }
+      // If <- or A move to the left.
+      if (e.keyCode === 37 || e.keyCode === 65) {
+        this.props.move({
+          x: -1,
+          y: 0
+        });
+      }
+      // If <- or A move to the top.
+      if (e.keyCode === 38 || e.keyCode === 87) {
+        this.props.move({
+          x: 0,
+          y: -1
+        });
+      }
+      // If ^ or W move to the bottom.
+      if (e.keyCode === 40 || e.keyCode === 83) {
+        this.props.move({
+          x: 0,
+          y: 1
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -25540,7 +25575,8 @@ TilesGrid.propTypes = {
     x: _propTypes2.default.number.isRequired,
     y: _propTypes2.default.number.isRequired,
     value: _propTypes2.default.number.isRequired
-  })).isRequired
+  })).isRequired,
+  move: _propTypes2.default.func.isRequired
 };
 },{"react":19,"prop-types":57,"./utils":32,"../../components/Tile":49,"../../components/Grid":50,"./Wrapper":33}],8:[function(require,module,exports) {
 "use strict";
@@ -25629,48 +25665,13 @@ var App = function (_React$Component) {
     _this.state = {
       score: 6216
     };
-
-    _this.keyDownHandler = _this.keyDownHandler.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      document.addEventListener('keydown', this.keyDownHandler, false);
       this.props.newGame();
-    }
-  }, {
-    key: "keyDownHandler",
-    value: function keyDownHandler(e) {
-      // If -> or D move to the right.
-      if (e.keyCode === 39 || e.keyCode === 68) {
-        this.props.move({
-          x: 1,
-          y: 0
-        });
-      }
-      // If <- or A move to the left.
-      if (e.keyCode === 37 || e.keyCode === 65) {
-        this.props.move({
-          x: -1,
-          y: 0
-        });
-      }
-      // If <- or A move to the top.
-      if (e.keyCode === 38 || e.keyCode === 87) {
-        this.props.move({
-          x: 0,
-          y: -1
-        });
-      }
-      // If ^ or W move to the bottom.
-      if (e.keyCode === 40 || e.keyCode === 83) {
-        this.props.move({
-          x: 0,
-          y: 1
-        });
-      }
     }
   }, {
     key: "render",
@@ -25694,7 +25695,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             _ContainerItem2.default,
             { column: "1 / span 2", row: "2" },
-            _react2.default.createElement(_TilesGrid2.default, { tiles: this.props.tiles })
+            _react2.default.createElement(_TilesGrid2.default, { tiles: this.props.tiles, move: this.props.move })
           ),
           _react2.default.createElement(
             _Manual2.default,
@@ -25720,7 +25721,8 @@ App.propTypes = {
     y: _propTypes2.default.number.isRequired,
     value: _propTypes2.default.number.isRequired
   })).isRequired,
-  newGame: _propTypes2.default.func.isRequired
+  newGame: _propTypes2.default.func.isRequired,
+  move: _propTypes2.default.func.isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);

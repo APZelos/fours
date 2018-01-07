@@ -32,44 +32,10 @@ class App extends React.Component {
     this.state = {
       score: 6216,
     };
-
-    this.keyDownHandler = this.keyDownHandler.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.keyDownHandler, false);
     this.props.newGame();
-  }
-
-  keyDownHandler(e) {
-    // If -> or D move to the right.
-    if (e.keyCode === 39 || e.keyCode === 68) {
-      this.props.move({
-        x: 1,
-        y: 0,
-      });
-    }
-    // If <- or A move to the left.
-    if (e.keyCode === 37 || e.keyCode === 65) {
-      this.props.move({
-        x: -1,
-        y: 0,
-      });
-    }
-    // If <- or A move to the top.
-    if (e.keyCode === 38 || e.keyCode === 87) {
-      this.props.move({
-        x: 0,
-        y: -1,
-      });
-    }
-    // If ^ or W move to the bottom.
-    if (e.keyCode === 40 || e.keyCode === 83) {
-      this.props.move({
-        x: 0,
-        y: 1,
-      });
-    }
   }
 
   render() {
@@ -83,7 +49,7 @@ class App extends React.Component {
             {this.state.score}
           </Score>
           <ContainerItem column="1 / span 2" row="2">
-            <TilesGrid tiles={this.props.tiles} />
+            <TilesGrid tiles={this.props.tiles} move={this.props.move} />
           </ContainerItem>
           <Manual column="1 / span 2" row="3">
             Move tiles by pressing arrow keys or WASD
@@ -104,6 +70,7 @@ App.propTypes = {
     value: PropTypes.number.isRequired,
   })).isRequired,
   newGame: PropTypes.func.isRequired,
+  move: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
