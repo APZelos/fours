@@ -21136,6 +21136,23 @@ function tryToMoveTile(tile, direction) {
  * in the next move.
  */
 function checkIfAnyTileCanMove() {
+  function checkTile(tile, direction) {
+    // Calculates the position of the next cell
+    // in the direction of the movement.
+    var nextX = tile.x + direction.x;
+    var nextY = tile.y + direction.y;
+
+    // If next cell is out of bound stop.
+    if (nextX > 3 || nextY > 3 || nextX < 0 || nextY < 0) {
+      return false;
+    }
+
+    var nextCell = grid[nextY][nextX];
+    var canMove = !nextCell || nextCell.value === tile.value;
+
+    return canMove;
+  }
+
   var canAnyTileMove = false;
   loopGrid(function (x, y) {
     var cell = grid[y][x];
@@ -21146,19 +21163,19 @@ function checkIfAnyTileCanMove() {
       y: y
     };
     // Checks move to the right.
-    var canMoveRight = !!tryToMoveTile(tile, { x: 1, y: 0 });
+    var canMoveRight = !!checkTile(tile, { x: 1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveRight;
     if (canAnyTileMove) return true;
     // Checks move to the left.
-    var canMoveLeft = !!tryToMoveTile(tile, { x: -1, y: 0 });
+    var canMoveLeft = !!checkTile(tile, { x: -1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveLeft;
     if (canAnyTileMove) return true;
     // Checks move to the top.
-    var canMoveUp = !!tryToMoveTile(tile, { x: 0, y: -1 });
+    var canMoveUp = !!checkTile(tile, { x: 0, y: -1 });
     canAnyTileMove = canAnyTileMove || canMoveUp;
     if (canAnyTileMove) return true;
     // Checks move to the bottom.
-    var canMoveDown = !!tryToMoveTile(tile, { x: 0, y: 1 });
+    var canMoveDown = !!checkTile(tile, { x: 0, y: 1 });
     canAnyTileMove = canAnyTileMove || canMoveDown;
     if (canAnyTileMove) return true;
 
@@ -25478,12 +25495,12 @@ var TilesGrid = function (_React$Component) {
       // spawned from merge.
       var newState = (0, _utils2.default)(propTiles, this.state.tiles);
       // Filters out the tiles that must be removed because of merge.
-      var tilesAfterMerge = newState.filter(function (tile) {
-        return !tile.isMerged;
+      var isAnyTileMerged = newState.some(function (tile) {
+        return tile.isMerged;
       });
       this.setState({ tiles: newState });
       // If no merged happen stop.
-      if (tilesAfterMerge.length === newState.length) {
+      if (!isAnyTileMerged) {
         // Check if any state change is pending
         // and proceed to resolve it after moe animation is over.
         setTimeout(function () {
@@ -25497,6 +25514,9 @@ var TilesGrid = function (_React$Component) {
       // After the move animations ends
       // remove tiles that merged.
       setTimeout(function () {
+        var tilesAfterMerge = newState.filter(function (tile) {
+          return !tile.isMerged;
+        });
         _this2.setState({ tiles: tilesAfterMerge });
         // Check if any state change is pending
         // and proceed to resolve it after moe animation is over.

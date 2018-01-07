@@ -80,10 +80,10 @@ export default class TilesGrid extends React.Component {
     // spawned from merge.
     const newState = mapTilesToState(propTiles, this.state.tiles);
     // Filters out the tiles that must be removed because of merge.
-    const tilesAfterMerge = newState.filter(tile => !tile.isMerged);
+    const isAnyTileMerged = newState.some(tile => tile.isMerged);
     this.setState({ tiles: newState });
     // If no merged happen stop.
-    if (tilesAfterMerge.length === newState.length) {
+    if (!isAnyTileMerged) {
       // Check if any state change is pending
       // and proceed to resolve it after moe animation is over.
       setTimeout(() => {
@@ -97,6 +97,7 @@ export default class TilesGrid extends React.Component {
     // After the move animations ends
     // remove tiles that merged.
     setTimeout(() => {
+      const tilesAfterMerge = newState.filter(tile => !tile.isMerged);
       this.setState({ tiles: tilesAfterMerge });
       // Check if any state change is pending
       // and proceed to resolve it after moe animation is over.

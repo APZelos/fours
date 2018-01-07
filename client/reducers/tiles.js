@@ -173,6 +173,23 @@ function tryToMoveTile(tile, direction) {
  * in the next move.
  */
 function checkIfAnyTileCanMove() {
+  function checkTile(tile, direction) {
+    // Calculates the position of the next cell
+    // in the direction of the movement.
+    const nextX = tile.x + direction.x;
+    const nextY = tile.y + direction.y;
+
+    // If next cell is out of bound stop.
+    if (nextX > 3 || nextY > 3 || nextX < 0 || nextY < 0) {
+      return false;
+    }
+
+    const nextCell = grid[nextY][nextX];
+    const canMove = !nextCell || nextCell.value === tile.value;
+
+    return canMove;
+  }
+
   let canAnyTileMove = false;
   loopGrid((x, y) => {
     const cell = grid[y][x];
@@ -183,19 +200,19 @@ function checkIfAnyTileCanMove() {
       y,
     };
     // Checks move to the right.
-    const canMoveRight = !!tryToMoveTile(tile, { x: 1, y: 0 });
+    const canMoveRight = !!checkTile(tile, { x: 1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveRight;
     if (canAnyTileMove) return true;
     // Checks move to the left.
-    const canMoveLeft = !!tryToMoveTile(tile, { x: -1, y: 0 });
+    const canMoveLeft = !!checkTile(tile, { x: -1, y: 0 });
     canAnyTileMove = canAnyTileMove || canMoveLeft;
     if (canAnyTileMove) return true;
     // Checks move to the top.
-    const canMoveUp = !!tryToMoveTile(tile, { x: 0, y: -1 });
+    const canMoveUp = !!checkTile(tile, { x: 0, y: -1 });
     canAnyTileMove = canAnyTileMove || canMoveUp;
     if (canAnyTileMove) return true;
     // Checks move to the bottom.
-    const canMoveDown = !!tryToMoveTile(tile, { x: 0, y: 1 });
+    const canMoveDown = !!checkTile(tile, { x: 0, y: 1 });
     canAnyTileMove = canAnyTileMove || canMoveDown;
     if (canAnyTileMove) return true;
 
