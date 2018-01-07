@@ -24978,8 +24978,7 @@ exports.default = (0, _styledComponents2.default)(_ContainerItem2.default).withC
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.mapTilesToState = mapTilesToState;
-exports.mergeTiles = mergeTiles;
+exports.default = mapTilesToState;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -25029,7 +25028,7 @@ function mapTilesToState(tiles, state) {
 
     // If tile spawned from merge
     // moves the merged tiles to the position
-    // that they merged.
+    // that they merged and flags them as merged.
     if (tile.fromMerge) {
       var tile1 = newState.find(function (stateTile) {
         return stateTile.id === tile.fromMerge.tile1;
@@ -25037,13 +25036,14 @@ function mapTilesToState(tiles, state) {
       tile1.position.x = calculateX(tile.x);
       tile1.position.y = calculateY(tile.y);
       tile1.justSpawned = false;
+      tile1.isMerged = true;
       var tile2 = newState.find(function (stateTile) {
         return stateTile.id === tile.fromMerge.tile2;
       });
       tile2.position.x = calculateX(tile.x);
       tile2.position.y = calculateY(tile.y);
       tile2.justSpawned = false;
-      return;
+      tile2.isMerged = true;
     }
 
     // Creates a new tile and adds it
@@ -25060,37 +25060,6 @@ function mapTilesToState(tiles, state) {
   });
 
   return newState;
-}
-
-/**
- * Removes the merged tiles
- * and add the tiles spawned from the merge.
- *
- * @param {Array} tilesFromMerge the tiles spawned from the merge.
- * @param {Array} stateBeforeMerge the state before the merge.
- */
-function mergeTiles(tilesFromMerge, stateBeforeMerge) {
-  // If not tiles from merge exist stop.
-  if (!tilesFromMerge || tilesFromMerge.length === 0) return undefined;
-
-  var stateAfterMerge = [].concat(_toConsumableArray(stateBeforeMerge));
-  tilesFromMerge.forEach(function (tileFromMerge) {
-    // Removes the merged tiles.
-    stateAfterMerge = stateAfterMerge.filter(function (tile) {
-      return tile.id !== tileFromMerge.fromMerge.tile1 && tile.id !== tileFromMerge.fromMerge.tile2;
-    });
-    // Adds the tile that spawned from merge.
-    stateAfterMerge.push({
-      id: tileFromMerge.id,
-      value: tileFromMerge.value,
-      position: {
-        x: calculateX(tileFromMerge.x),
-        y: calculateY(tileFromMerge.y)
-      }
-    });
-  });
-
-  return stateAfterMerge;
 }
 },{}],54:[function(require,module,exports) {
 "use strict";
@@ -25393,6 +25362,8 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _utils = require("./utils");
 
+var _utils2 = _interopRequireDefault(_utils);
+
 var _Tile = require("../../components/Tile");
 
 var _Tile2 = _interopRequireDefault(_Tile);
@@ -25503,34 +25474,36 @@ var TilesGrid = function (_React$Component) {
       }
       // Resolves the state without the tiles that
       // spawned from merge.
-      var newState = (0, _utils.mapTilesToState)(propTiles, this.state.tiles);
-      // Filters out the tiles that spawned from merge
-      // and resolves how the state must be after the merge.
-      var tilesFromMerge = propTiles.filter(function (tile) {
-        return tile.fromMerge;
+      var newState = (0, _utils2.default)(propTiles, this.state.tiles);
+      // Filters out the tiles that must be removed because of merge.
+      var tilesAfterMerge = newState.filter(function (tile) {
+        return !tile.isMerged;
       });
-      var stateAfterMerge = (0, _utils.mergeTiles)(tilesFromMerge, newState);
       this.setState({ tiles: newState });
-      // If no merge happened stop.
-      if (!stateAfterMerge) {
+      // If no merged happen stop.
+      if (tilesAfterMerge.length === newState.length) {
         // Check if any state change is pending
-        // and proceed to resolve it.
-        var nextOnQueue = this.getNextOnQueue();
-        if (nextOnQueue) {
-          this.resolveNewState(nextOnQueue);
-        }
+        // and proceed to resolve it after moe animation is over.
+        setTimeout(function () {
+          var nextOnQueue = _this2.getNextOnQueue();
+          if (nextOnQueue) {
+            _this2.resolveNewState(nextOnQueue);
+          }
+        }, 200);
         return;
       }
-      // After the animations end update
-      // teh state to its after merge form.
+      // After the move animations ends
+      // remove tiles that merged.
       setTimeout(function () {
-        _this2.setState({ tiles: stateAfterMerge });
+        _this2.setState({ tiles: tilesAfterMerge });
         // Check if any state change is pending
-        // and proceed to resolve it.
-        var nextOnQueue = _this2.getNextOnQueue();
-        if (nextOnQueue) {
-          _this2.resolveNewState(nextOnQueue);
-        }
+        // and proceed to resolve it after moe animation is over.
+        setTimeout(function () {
+          var nextOnQueue = _this2.getNextOnQueue();
+          if (nextOnQueue) {
+            _this2.resolveNewState(nextOnQueue);
+          }
+        }, 200);
       }, 200);
     }
   }, {

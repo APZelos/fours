@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { mapTilesToState, mergeTiles } from './utils';
+import mapTilesToState from './utils';
 import Tile from '../../components/Tile';
 import Grid from '../../components/Grid';
 import Wrapper from './Wrapper';
@@ -77,31 +77,33 @@ export default class TilesGrid extends React.Component {
     // Resolves the state without the tiles that
     // spawned from merge.
     const newState = mapTilesToState(propTiles, this.state.tiles);
-    // Filters out the tiles that spawned from merge
-    // and resolves how the state must be after the merge.
-    const tilesFromMerge = propTiles.filter(tile => tile.fromMerge);
-    const stateAfterMerge = mergeTiles(tilesFromMerge, newState);
+    // Filters out the tiles that must be removed because of merge.
+    const tilesAfterMerge = newState.filter(tile => !tile.isMerged);
     this.setState({ tiles: newState });
-    // If no merge happened stop.
-    if (!stateAfterMerge) {
+    // If no merged happen stop.
+    if (tilesAfterMerge.length === newState.length) {
       // Check if any state change is pending
-      // and proceed to resolve it.
-      const nextOnQueue = this.getNextOnQueue();
-      if (nextOnQueue) {
-        this.resolveNewState(nextOnQueue);
-      }
+      // and proceed to resolve it after moe animation is over.
+      setTimeout(() => {
+        const nextOnQueue = this.getNextOnQueue();
+        if (nextOnQueue) {
+          this.resolveNewState(nextOnQueue);
+        }
+      }, 200);
       return;
     }
-    // After the animations end update
-    // teh state to its after merge form.
+    // After the move animations ends
+    // remove tiles that merged.
     setTimeout(() => {
-      this.setState({ tiles: stateAfterMerge });
+      this.setState({ tiles: tilesAfterMerge });
       // Check if any state change is pending
-      // and proceed to resolve it.
-      const nextOnQueue = this.getNextOnQueue();
-      if (nextOnQueue) {
-        this.resolveNewState(nextOnQueue);
-      }
+      // and proceed to resolve it after moe animation is over.
+      setTimeout(() => {
+        const nextOnQueue = this.getNextOnQueue();
+        if (nextOnQueue) {
+          this.resolveNewState(nextOnQueue);
+        }
+      }, 200);
     }, 200);
   }
 

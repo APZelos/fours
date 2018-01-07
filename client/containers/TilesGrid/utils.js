@@ -27,7 +27,7 @@ function calculateY(y) {
  * @param {Array} tiles the tiles that will be mapped.
  * @param {Array} state the tiles from previous state.
  */
-export function mapTilesToState(tiles, state) {
+export default function mapTilesToState(tiles, state) {
   const newState = [...state];
 
   tiles.forEach((tile) => {
@@ -42,17 +42,18 @@ export function mapTilesToState(tiles, state) {
 
     // If tile spawned from merge
     // moves the merged tiles to the position
-    // that they merged.
+    // that they merged and flags them as merged.
     if (tile.fromMerge) {
       const tile1 = newState.find(stateTile => stateTile.id === tile.fromMerge.tile1);
       tile1.position.x = calculateX(tile.x);
       tile1.position.y = calculateY(tile.y);
       tile1.justSpawned = false;
+      tile1.isMerged = true;
       const tile2 = newState.find(stateTile => stateTile.id === tile.fromMerge.tile2);
       tile2.position.x = calculateX(tile.x);
       tile2.position.y = calculateY(tile.y);
       tile2.justSpawned = false;
-      return;
+      tile2.isMerged = true;
     }
 
     // Creates a new tile and adds it
@@ -69,34 +70,4 @@ export function mapTilesToState(tiles, state) {
   });
 
   return newState;
-}
-
-/**
- * Removes the merged tiles
- * and add the tiles spawned from the merge.
- *
- * @param {Array} tilesFromMerge the tiles spawned from the merge.
- * @param {Array} stateBeforeMerge the state before the merge.
- */
-export function mergeTiles(tilesFromMerge, stateBeforeMerge) {
-  // If not tiles from merge exist stop.
-  if (!tilesFromMerge || tilesFromMerge.length === 0) return undefined;
-
-  let stateAfterMerge = [...stateBeforeMerge];
-  tilesFromMerge.forEach((tileFromMerge) => {
-    // Removes the merged tiles.
-    stateAfterMerge = stateAfterMerge.filter(tile =>
-      tile.id !== tileFromMerge.fromMerge.tile1 && tile.id !== tileFromMerge.fromMerge.tile2);
-    // Adds the tile that spawned from merge.
-    stateAfterMerge.push({
-      id: tileFromMerge.id,
-      value: tileFromMerge.value,
-      position: {
-        x: calculateX(tileFromMerge.x),
-        y: calculateY(tileFromMerge.y),
-      },
-    });
-  });
-
-  return stateAfterMerge;
 }
