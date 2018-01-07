@@ -21215,8 +21215,6 @@ function move(direction) {
           value: tile.value,
           fromMerge: tile.fromMerge
         };
-
-        tiles.push(tile);
       }
 
       axes[movingAxis] = direction[movingAxis] > 0 ? axes[movingAxis] - 1 : axes[movingAxis] + 1;
@@ -21225,6 +21223,14 @@ function move(direction) {
     axes[movingAxis] = direction[movingAxis] > 0 ? 3 : 0;
     axes[fixedAxis] += 1;
   }
+  // Collect all tiles.
+  loopGrid(function (x, y) {
+    var tile = grid[y][x];
+    if (!tile) return;
+    tile.x = x;
+    tile.y = y;
+    tiles.push(tile);
+  });
 
   if (hasAnyTileMoved) {
     var newTile = spawnTile(0.6);
